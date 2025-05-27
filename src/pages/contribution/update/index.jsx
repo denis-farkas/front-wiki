@@ -69,7 +69,7 @@ const EditContribution = () => {
     if (
       actualUser !== undefined &&
       actualUser.role === "user" &&
-      actualUser.id === contribution.user_id &&
+      actualUser.idUser === contribution.user_id &&
       contribution.validation === 0
     ) {
       const API_URL = import.meta.env.VITE_API_URL;

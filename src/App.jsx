@@ -38,6 +38,10 @@ import BackTemperament from "./pages/backTemperament";
 import BackTemperamentCreate from "./pages/backTemperament/create";
 import BackTemperamentUpdate from "./pages/backTemperament/update";
 
+import Espece from "./pages/espece";
+import SearchResults from "./pages/searchResults";
+import SearchHistory from "./pages/searchHistory";
+
 function App() {
   return (
     <Router>
@@ -70,16 +74,19 @@ function App() {
               path="/backContribution/validate/:id_contribution"
               element={<ValidateContribution />}
             />
-            <Route path="/contribution" element={<Contribution />} />
             <Route
-              path="/contribution/update/:id"
+              path="/contribution/create/:id_espece"
+              element={<Contribution />}
+            />
+            <Route
+              path="/contribution/update/:id_contribution"
               element={<EditContribution />}
             />
 
             <Route path="/backEspece" element={<BackEspece />} />
             <Route path="/backEspece/create" element={<BackEspeceCreate />} />
             <Route
-              path="/backEspece/update/:id"
+              path="/backEspece/update/:id_espece"
               element={<BackEspeceUpdate />}
             />
 
@@ -96,16 +103,19 @@ function App() {
               element={<BackTemperamentCreate />}
             />
             <Route
-              path="/backTemperament/update/:id"
+              path="/backTemperament/update/:id_temperament"
               element={<BackTemperamentUpdate />}
             />
 
             <Route path="/backFamille" element={<BackFamille />} />
             <Route path="/backFamille/create" element={<BackFamilleCreate />} />
             <Route
-              path="/backFamille/update/:id"
+              path="/backFamille/update/:id_famille"
               element={<BackFamilleUpdate />}
             />
+            <Route path="/espece/readOne/:id_espece" element={<Espece />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/search-history" element={<SearchHistory />} />
           </Routes>
         </main>
         <Footer />

@@ -30,7 +30,7 @@ const CommentaireCreate = () => {
         commentaire: commentaire.commentaire,
         date: generateDateTime(),
         validation: false,
-        user_id: actualUser.user_id,
+        user_id: actualUser.userId,
         id_espece: id_espece,
       };
       data = JSON.stringify(data);

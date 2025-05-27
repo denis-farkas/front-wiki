@@ -10,7 +10,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [mdp, setMdp] = useState("");
   const role = "user";
-  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
   let navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -26,7 +26,7 @@ const SignUp = () => {
     let config = {
       method: "post",
       maxBodyLength: Infinity,
-      url: `${VITE_URL_API}/users/signUp`,
+      url: `${VITE_API_URL}/users/signUp`,
       headers: {
         "Content-Type": "application/json",
       },

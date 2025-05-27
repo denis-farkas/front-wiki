@@ -93,6 +93,16 @@ const Header = () => {
                       >
                         Se déconnecter
                       </NavLink>
+                      <NavLink
+                        to={"/search-history"}
+                        className={({ isActive }) =>
+                          isActive ? "nav-link active" : "nav-link"
+                        }
+                        role="menuitem"
+                      >
+                        <i className="bi bi-clock-history me-1"></i>
+                        Historique de recherche
+                      </NavLink>
                     </>
                   ) : (
                     <>

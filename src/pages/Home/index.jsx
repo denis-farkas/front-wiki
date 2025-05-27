@@ -1,5 +1,7 @@
 import "./home.css";
 import EspecesByFamille from "../especes";
+
+import SearchBar from "../../components/searchBar";
 const Home = () => {
   return (
     <div className="container">
@@ -20,6 +22,7 @@ const Home = () => {
         détails essentiels, y compris des images, des descriptions et des
         informations sur leur habitat.
       </p>
+      <SearchBar />
       <EspecesByFamille />
     </div>
   );

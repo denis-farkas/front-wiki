@@ -47,6 +47,7 @@ const BackCommentaireUpdate = () => {
       const API_URL = import.meta.env.VITE_API_URL;
 
       let data = {
+        id_commentaire: id_commentaire,
         validation: commentaire.validation,
       };
       data = JSON.stringify(data);
@@ -54,9 +55,10 @@ const BackCommentaireUpdate = () => {
       let config = {
         method: "put",
         maxBodyLength: Infinity,
-        url: `${API_URL}/commentaire/update/${id_commentaire}`,
+        url: `${API_URL}/commentaire/updateValidation/${id_commentaire}`,
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${actualUser.token}`,
         },
         data: data,
       };

@@ -12,7 +12,7 @@ const UserProfile = () => {
   let actualUser = JSON.parse(localStorage.getItem("user"));
   const id = actualUser.userId;
   const navigate = useNavigate();
-  const VITE_URL_API = import.meta.env.VITE_URL_API;
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     let data;
@@ -20,7 +20,7 @@ const UserProfile = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `${VITE_URL_API}/users/readOneUser?id=${id}`,
+      url: `${VITE_API_URL}/users/readOneUser?id=${id}`,
       headers: {
         "Content-Type": "application/json",
       },
@@ -36,7 +36,7 @@ const UserProfile = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, [id, VITE_URL_API]);
+  }, [id, VITE_API_URL]);
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -60,7 +60,7 @@ const UserProfile = () => {
       let config = {
         method: "put",
         maxBodyLength: Infinity,
-        url: "http://localhost:3000/users/updateUser",
+        url: `${VITE_API_URL}/users/updateUser`,
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

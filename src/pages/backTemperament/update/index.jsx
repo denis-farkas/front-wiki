@@ -16,7 +16,7 @@ const BackTemperamentUpdate = () => {
     let config = {
       method: "get",
       maxBodyLength: Infinity,
-      url: `${API_URL}/temperament/${id_temperament}`,
+      url: `${API_URL}/temperament/readOne/${id_temperament}`,
       headers: {
         "Content-Type": "application/json",
       },

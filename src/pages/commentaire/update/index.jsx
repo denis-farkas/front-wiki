@@ -31,7 +31,7 @@ const CommentaireUpdate = () => {
   }, [id_commentaire]);
 
   let actualUser = JSON.parse(localStorage.getItem("user"));
-  if (!actualUser || actualUser.id !== commentaire?.userId) {
+  if (!actualUser || actualUser.userId !== commentaire?.user_id) {
     toast.error("Vous ne disposez pas des droits pour cette modification");
     return navigate("/home");
   }
@@ -48,7 +48,10 @@ const CommentaireUpdate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (actualUser !== undefined && actualUser.id !== commentaire?.userId) {
+    if (
+      actualUser !== undefined &&
+      actualUser.userId !== commentaire?.user_id
+    ) {
       const API_URL = import.meta.env.VITE_API_URL;
 
       let data = {

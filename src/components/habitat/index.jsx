@@ -11,13 +11,13 @@ const Habitat = ({ id_habitat }) => {
     if (!id_habitat) return;
     setLoading(true);
 
-    fetch(`${API_URL}/habitat/read/${id_habitat}`)
+    fetch(`${API_URL}/habitat/readOne/${id_habitat}`)
       .then((res) => {
         if (!res.ok) throw new Error("Couldn't fetch habitat data");
         return res.json();
       })
       .then((data) => {
-        setHabitat(data);
+        setHabitat(data.habitat);
         setLoading(false);
       })
       .catch((error) => {

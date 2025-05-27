@@ -11,13 +11,13 @@ const Temperament = ({ id_temperament }) => {
     if (!id_temperament) return;
     setLoading(true);
 
-    fetch(`${API_URL}/temperament/read/${id_temperament}`)
+    fetch(`${API_URL}/temperament/readOne/${id_temperament}`)
       .then((res) => {
         if (!res.ok) throw new Error("Couldn't fetch temperament data");
         return res.json();
       })
       .then((data) => {
-        setTemperament(data);
+        setTemperament(data.temperament);
         setLoading(false);
       })
       .catch((error) => {

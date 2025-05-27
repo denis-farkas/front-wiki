@@ -11,13 +11,13 @@ const Famille = ({ id_famille }) => {
     if (!id_famille) return;
     setLoading(true);
 
-    fetch(`${API_URL}/famille/read/${id_famille}`)
+    fetch(`${API_URL}/famille/readOne/${id_famille}`)
       .then((res) => {
         if (!res.ok) throw new Error("Couldn't fetch famille data");
         return res.json();
       })
       .then((data) => {
-        setFamille(data);
+        setFamille(data.famille);
         setLoading(false);
       })
       .catch((error) => {
